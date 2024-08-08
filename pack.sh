@@ -29,7 +29,7 @@ flatpak install --user -y io.github.hmlendea.geforcenow-electron ## GFN
 # Install Minecraft/ROBLOX
 flatpak install --user -y org.prismlauncher.PrismLauncher ## Minecraft Java Launcher
 flatpak install --user -y org.vinegarhq.Vinegar ## For using ROBLOX Studio
-flatpak install --user -y https://sober.vinegarhq.org/sober.flatpakref ## Installs Sober Project to run ROBLOX Player on our Linux PC
+flatpak install --user -y https://sober.vinegarhq.org/sober.flatpakref ## Installs Sober Project to run ROBLOX Player on our Linux PC. Note that this requires the "universal" mapk binary from [here.](https://www.apkmirror.com/apk/roblox-corporation/roblox/)
 
 # Install coding stuffs...
 flatpak install --user -y org.filezillaproject.Filezilla # FTP/SFTP uploading program
@@ -37,8 +37,19 @@ flatpak install --user -y com.visualstudio.code # VSCode. It's a code editor, NO
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash # nvm, used to manage nodejs versions
 
 # Install AI stuffs....
-flatpak install --user -y org.upscayl.Upscayl
-curl -fsSL https://ollama.com/install.sh | sh
+flatpak install --user -y org.upscayl.Upscayl ## Install AI upscaler
+curl -fsSL https://ollama.com/install.sh | sh ## Install AI chatbot
+
+# SneedHosts (Got permission from the Sneed Group team to use this!)
+printf "# SneedHosts Collection. Made by Sneed Group.\n" > sneedhosts.tmp ## Init the hosts with a line giving credit.
+curl https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/hosts/pro.txt >> sneedhosts.tmp ## Get collection
+printf "\n" >> sneedhosts.tmp ## New line
+curl https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews/hosts >> sneedhosts.tmp ## Get collection
+printf "\n" >> sneedhosts.tmp ## New line
+curl https://someonewhocares.org/hosts/hosts >> sneedhosts.tmp ## Get collection
+printf "\n # END OF SNEEDHOSTS" >> sneedhosts.tmp ## End Of File
+sudo mv /etc/hosts /etc/hosts.bak ## Backup old hosts file...
+sudo cp sneedhosts.tmp /etc/hosts ## ...and insert ours instead!
 
 # Clear and ask for reboot.
 clear ## Clear the screen.
