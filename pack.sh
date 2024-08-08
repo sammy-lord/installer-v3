@@ -39,3 +39,7 @@ wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 # Install AI stuffs....
 flatpak install --user -y org.upscayl.Upscayl
 curl -fsSL https://ollama.com/install.sh | sh
+
+# Clear and ask for reboot.
+clear ## Clear the screen.
+echo "Done! PLEASE REBOOT NOW TO APPLY CHANGES." ## Asks for reboot.
