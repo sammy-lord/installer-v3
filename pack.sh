@@ -27,7 +27,6 @@ flatpak install --user -y com.heroicgameslauncher.hgl ## For installing Epic Gam
 flatpak install --user -y io.github.hmlendea.geforcenow-electron ## GFN
 
 # Install Minecraft/ROBLOX
-flatpak install --user -y org.prismlauncher.PrismLauncher ## Minecraft Java Launcher
 flatpak install --user -y org.vinegarhq.Vinegar ## For using ROBLOX Studio
 flatpak install --user -y https://sober.vinegarhq.org/sober.flatpakref ## Installs Sober Project to run ROBLOX Player on our Linux PC. Note that this requires the "universal" mapk binary from [here.](https://www.apkmirror.com/apk/roblox-corporation/roblox/)
 
